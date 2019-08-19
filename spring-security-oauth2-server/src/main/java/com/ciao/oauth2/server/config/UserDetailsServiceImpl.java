@@ -29,11 +29,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private PermissionService permissionService;
+
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         UserEntity userEntity = userService.queryByUsername(s);
         List<GrantedAuthority> grantedAuthorities = Lists.newArrayList();
+//        String username="";
+//        String password="";
         if (userEntity != null) {
+//            username = userEntity.getUsername();
+//            password = userEntity.getPassword();
             // 获取用户授权
             List<PermissionEntity> permissionEntityList = permissionService.listPermissionByUserId(userEntity.getId());
 
@@ -45,8 +50,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 }
             });
         }
-
         // 由框架完成认证工作
         return new User(userEntity.getUsername(), userEntity.getPassword(), grantedAuthorities);
+
     }
 }
