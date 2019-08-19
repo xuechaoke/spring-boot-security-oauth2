@@ -1,5 +1,6 @@
 package com.ciao.oauth2.server.user.service.impl;
 
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.ciao.oauth2.server.constant.Constant;
@@ -10,7 +11,6 @@ import com.ciao.oauth2.server.user.dao.RoleDao;
 import com.ciao.oauth2.server.user.entity.RoleEntity;
 import com.ciao.oauth2.server.user.entity.dto.RoleDTO;
 import com.ciao.oauth2.server.user.service.RoleService;
-import io.micrometer.core.instrument.util.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -48,7 +48,7 @@ public class RoleServiceImpl extends BaseServiceImpl<RoleDao, RoleEntity> implem
         String id = (String)params.get("id");
 
         QueryWrapper<RoleEntity> wrapper = new QueryWrapper<>();
-        wrapper.eq(StringUtils.isNotBlank(id), "id", id);
+        wrapper.eq(StrUtil.isNotBlank(id), "id", id);
         //wrapper.eq(Constant.DEL_FLAG, DelFlagEnum.NORMAL.value());
 
         return wrapper;

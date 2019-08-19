@@ -1,5 +1,5 @@
 
-package com.ciao.oauth2.server.mp.service.impl;
+package com.ciao.oauth2.resources.mp.service.impl;
 
 
 import cn.hutool.core.util.StrUtil;
@@ -13,10 +13,10 @@ import com.baomidou.mybatisplus.core.toolkit.GlobalConfigUtils;
 import com.baomidou.mybatisplus.core.toolkit.ReflectionKit;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.toolkit.SqlHelper;
-import com.ciao.oauth2.server.constant.Constant;
-import com.ciao.oauth2.server.mp.service.BaseService;
-import com.ciao.oauth2.server.mp.tool.page.PageData;
-import com.ciao.oauth2.server.mp.utils.ConvertUtils;
+import com.ciao.oauth2.resources.constant.Constant;
+import com.ciao.oauth2.resources.mp.service.BaseService;
+import com.ciao.oauth2.resources.mp.tool.page.PageData;
+import com.ciao.oauth2.resources.mp.utils.ConvertUtils;
 import org.apache.ibatis.binding.MapperMethod;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionUtils;
